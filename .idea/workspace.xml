@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c48e6d3b-c1ed-4291-8ac0-e3657a3e7dc5" name="Default Changelist" comment="" />
+    <list default="true" id="c48e6d3b-c1ed-4291-8ac0-e3657a3e7dc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils_test.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,31 +26,33 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="c" value="2" />
-          <entry key="go" value="936" />
+          <entry key="go" value="1103" />
           <entry key="h" value="4" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="C++" value="6" />
           <entry key="CGO" value="2" />
-          <entry key="Go" value="934" />
+          <entry key="Go" value="1101" />
+          <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="c" value="4" />
-          <entry key="go" value="37" />
+          <entry key="go" value="43" />
           <entry key="h" value="3" />
-          <entry key="py" value="4" />
+          <entry key="py" value="9" />
           <entry key="s" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="C++" value="7" />
-          <entry key="Go" value="37" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Go" value="43" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="x86 Plan9 Assembly" value="1" />
         </counts>
       </usages-collector>
@@ -54,42 +60,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-              <folding>
-                <element signature="e#19#95#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="67" column="23" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="23" />
-              <folding>
-                <element signature="e#18#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parse.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-              <folding>
-                <element signature="e#207#246#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go-python.h">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/object.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="-349">
+              <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
               <folding>
                 <element signature="e#208#257#0" expanded="true" />
               </folding>
@@ -120,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/go-1.10/src/runtime/panic.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="550" selection-start-line="550" selection-end-line="550" />
+            <state relative-caret-position="-323">
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -150,6 +120,9 @@
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/lib/go-1.10" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -161,9 +134,10 @@
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/go-python.h" />
         <option value="$PROJECT_DIR$/python.go" />
-        <option value="$PROJECT_DIR$/object.go" />
         <option value="$PROJECT_DIR$/utils.go" />
         <option value="$PROJECT_DIR$/parse.go" />
+        <option value="$PROJECT_DIR$/hello.py" />
+        <option value="$PROJECT_DIR$/object.go" />
         <option value="$PROJECT_DIR$/utils_test.go" />
       </list>
     </option>
@@ -180,6 +154,7 @@
     <option name="width" value="924" />
     <option name="height" value="900" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -269,60 +244,69 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 27m 22s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 19m 02s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 27m 25s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 19m 57s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 28m 01s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 20m 09s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 29m 03s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 20m 42s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 33m 29s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 21m 21s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 35m 52s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 21m 46s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 38m 10s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 21m 57s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="BenchmarkInitialize_in_gopython - 2018.10.15 at 15h 46m 33s.xml">
-      <configuration name="BenchmarkInitialize in gopython" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 51m 21s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 25m 22s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 15h 51m 28s.xml">
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 27m 01s.xml">
       <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestAll_in_gopython - 2018.10.15 at 17h 27m 40s.xml">
+      <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1849" height="902" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958402" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.4997227" weight="0.32945737" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50027734" side_tool="true" weight="0.59431523" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997227" visible="true" weight="0.2648579" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49916804" weight="0.39922482" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4997227" weight="0.2642487" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49916804" weight="0.39896372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32901555" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4997227" visible="true" weight="0.32901555" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50027734" side_tool="true" weight="0.59431523" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,13 +328,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gopython.c.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gopython.c.go" />
     <entry file="file:///usr/lib/go-1.10/src/runtime/asm_amd64.s">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -358,27 +336,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <element signature="e#14#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go" />
     <entry file="file:///usr/lib/go-1.10/src/os/file.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="268" selection-start-line="268" selection-end-line="268" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/go-1.10/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="550" selection-start-line="550" selection-end-line="550" />
         </state>
       </provider>
     </entry>
@@ -396,46 +358,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/go-1.10/src/testing/testing.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="727" selection-start-line="727" selection-end-line="727" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hello.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/parse.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="e#207#246#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go-python.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go-python.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/object.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#208#257#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -450,23 +378,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/go-1.10/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="727" selection-start-line="727" selection-end-line="727" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/go-1.10/src/runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="587" selection-start-line="587" selection-end-line="587" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-python.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-python.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="67" column="23" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="23" />
+        <state relative-caret-position="152">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding>
             <element signature="e#18#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/object.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-349">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+          <folding>
+            <element signature="e#208#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="e#19#95#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-323">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>

@@ -16,6 +16,8 @@ func TestAll(t *testing.T) {
 	testFile.Write([]byte("    return x + y\n"))
 	testFile.Write([]byte("def return_self(self):\n"))
 	testFile.Write([]byte("    return self\n"))
+	testFile.Write([]byte("def zero_arg():\n"))
+	testFile.Write([]byte("    return 0\n"))
 	testFile.Close()
 
 	err = Initialize()
@@ -45,6 +47,11 @@ func TestAll(t *testing.T) {
 	self2, err := CallFunc("hello", "return_self", "self")
 	callSelf2 := GoStr(self2)
 	assert.True(t, callSelf2 == "self")
+	assert.Nil(t, err)
+
+	zero, err := CallFunc("hello", "zero_arg")
+	callZero := GoInt(zero)
+	assert.True(t, callZero == 0)
 	assert.Nil(t, err)
 
 	Finalize()

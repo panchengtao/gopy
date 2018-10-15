@@ -10,8 +10,6 @@ import (
 	"unsafe"
 )
 
-const Gopy_Max_Varargs = 8
-
 // The Python None object, denoting lack of value. This object has no methods.
 // It needs to be treated just like any other object with respect to reference
 // counts.

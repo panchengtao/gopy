@@ -7,7 +7,9 @@ import (
 )
 
 func TestInsertExtraPackagePath(t *testing.T) {
+	Initialize()
 	InsertExtraPackagePath("./")
+	Finalize()
 }
 
 // TODO:目前无法动态注入包搜索路径

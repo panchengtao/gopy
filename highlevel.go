@@ -1,8 +1,11 @@
 package gopython
 
+//#cgo pkg-config: python-3.6
+//#include "go-python.h"
+import "C"
+
 import (
 	"errors"
-	"fmt"
 	"strings"
 )
 
@@ -14,7 +17,6 @@ var GoInt = PyInt_AsLong
 func InsertExtraPackagePath(dir string) (*PyObject, error) {
 	sysModule := PyImport_ImportModule("sys")
 	path := sysModule.GetAttrString("path")
-	fmt.Println(GoStr(path))
 	if path != nil {
 		if str := GoStr(path.Repr()); !strings.Contains(str, dir) {
 			if err := PyList_Insert(path, 0, PyStr(dir)); err != nil {

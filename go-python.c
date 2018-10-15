@@ -1,5 +1,10 @@
 #include "go-python.h"
 
+int
+_gopy_PyRun_SimpleString(const char *command) {
+	return PyRun_SimpleString(command);
+}
+
 PyObject*
 _gopy_PyObject_CallFunction(PyObject *o, int len, char* pyfmt, void *cargs) {
 	void ** args = (void**)cargs;

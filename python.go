@@ -86,3 +86,11 @@ func PyTuple_SetItem(self *PyObject, pos int, o *PyObject) error {
 
 	return errors.New(fmt.Sprintf("error in C-Python (rc=%d)", int(err)))
 }
+
+// int PyRun_SimpleString(const char *command)
+// This is a simplified interface to PyRun_SimpleStringFlags() below, leaving the PyCompilerFlags* argument set to NULL.
+func PyRun_SimpleString(command string) int {
+	c_cmd := C.CString(command)
+	defer C.free(unsafe.Pointer(c_cmd))
+	return int(C._gopy_PyRun_SimpleString(c_cmd))
+}

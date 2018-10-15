@@ -9,5 +9,8 @@
 /* go-python */
 #define _gopy_max_varargs 8 /* maximum number of varargs accepted by go-python */
 
+int
+_gopy_PyRun_SimpleString(const char *command);
+
 PyObject*
 _gopy_PyObject_CallFunction(PyObject *o, int len, char* types, void *args);

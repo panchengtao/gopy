@@ -6,6 +6,10 @@ import (
 	"testing"
 )
 
+func TestInsertExtraPackagePath(t *testing.T) {
+	InsertExtraPackagePath("./")
+}
+
 // TODO:目前无法动态注入包搜索路径
 func TestAll(t *testing.T) {
 	testFile, err := os.OpenFile("./hello.py", os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0666)
@@ -25,9 +29,6 @@ func TestAll(t *testing.T) {
 
 	//_, err = InsertExtraPackagePath("/home/panchengtao/go/src/pythoninvoker/python3.6")
 	//assert.Nil(t, err)
-
-	_, err = ImportModule("hello")
-	assert.Nil(t, err)
 
 	ret, err := CallFunc("hello", "minus", 1, 1)
 	callInt := GoInt(ret)

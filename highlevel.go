@@ -2,6 +2,7 @@ package gopython
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -13,6 +14,7 @@ var GoInt = PyInt_AsLong
 func InsertExtraPackagePath(dir string) (*PyObject, error) {
 	sysModule := PyImport_ImportModule("sys")
 	path := sysModule.GetAttrString("path")
+	fmt.Println(GoStr(path))
 	if path != nil {
 		if str := GoStr(path.Repr()); !strings.Contains(str, dir) {
 			if err := PyList_Insert(path, 0, PyStr(dir)); err != nil {
@@ -24,15 +26,6 @@ func InsertExtraPackagePath(dir string) (*PyObject, error) {
 	}
 
 	return nil, errors.New("未导入指定模块路径")
-}
-
-// ImportModule 从指定的文件夹中导入包
-func ImportModule(name string) (*PyObject, error) {
-	if obj := PyImport_ImportModule(name); obj != nil {
-		return obj, nil
-	}
-
-	return nil, errors.New("未导入指定模块")
 }
 
 // CallFunc 调用 Python 中的方法
@@ -51,19 +44,29 @@ func CallFunc(modulename string, funcname string, args ...interface{}) (*PyObjec
 				}
 			}
 
-			res := module.GetAttrString(funcname).Call(funcArgs, Py_None)
-			return res, nil
+			var attr = module.GetAttrString(funcname)
+			if attr != nil {
+				res := attr.CallFunction(funcArgs)
+				return res, nil
+			}
 		}
 
-		res := module.GetAttrString(funcname).CallFunction()
-		return res, nil
-	} else {
-		return nil, err
+		var attr = module.GetAttrString(funcname)
+		if attr != nil {
+			res := module.GetAttrString(funcname).CallFunction()
+			return res, nil
+		}
 	}
+
+	return nil, errors.New("未成功获取模块内的 Func 实例")
 }
 
 // getModule 获得导入模块的引用
 // TODO:使用其他诸如缓存方法获取模块，取代重新导入
 func getModule(modulename string) (*PyObject, error) {
-	return ImportModule(modulename)
+	if obj := PyImport_ImportModule(modulename); obj != nil {
+		return obj, nil
+	}
+
+	return nil, errors.New("未导入指定模块")
 }

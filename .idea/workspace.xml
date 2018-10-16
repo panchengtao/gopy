@@ -4,7 +4,6 @@
     <list default="true" id="c48e6d3b-c1ed-4291-8ac0-e3657a3e7dc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/all_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/highlevel.go" beforeDir="false" afterPath="$PROJECT_DIR$/highlevel.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,16 +18,17 @@
     <session id="2078878219">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="c" value="4" />
-          <entry key="go" value="1542" />
+          <entry key="go" value="1593" />
           <entry key="h" value="6" />
           <entry key="py" value="4" />
         </counts>
@@ -37,14 +37,14 @@
         <counts>
           <entry key="C++" value="10" />
           <entry key="CGO" value="2" />
-          <entry key="Go" value="1540" />
+          <entry key="Go" value="1591" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="c" value="4" />
-          <entry key="go" value="75" />
+          <entry key="go" value="77" />
           <entry key="h" value="4" />
           <entry key="py" value="10" />
           <entry key="s" value="2" />
@@ -53,7 +53,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="C++" value="8" />
-          <entry key="Go" value="75" />
+          <entry key="Go" value="77" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="x86 Plan9 Assembly" value="2" />
         </counts>
@@ -62,20 +62,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="133">
+              <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/highlevel.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="73" selection-end-column="1" />
+            <state relative-caret-position="19">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="30" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parse.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -83,20 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/lib/go-1.10/src/testing/testing.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="998">
+            <state relative-caret-position="377">
               <caret line="776" selection-start-line="776" selection-end-line="776" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-              <folding>
-                <element signature="e#73#137#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/lib/go-1.10/src/runtime/cgocall.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="2337">
               <caret line="127" column="10" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
             </state>
           </provider>
@@ -157,11 +154,11 @@
         <option value="$PROJECT_DIR$/object.go" />
         <option value="$PROJECT_DIR$/go-python.h" />
         <option value="$PROJECT_DIR$/go-python.c" />
-        <option value="$PROJECT_DIR$/python.go" />
         <option value="$PROJECT_DIR$/utils.go" />
-        <option value="$PROJECT_DIR$/all_test.go" />
         <option value="$PROJECT_DIR$/parse.go" />
         <option value="$PROJECT_DIR$/highlevel.go" />
+        <option value="$PROJECT_DIR$/python.go" />
+        <option value="$PROJECT_DIR$/all_test.go" />
       </list>
     </option>
   </component>
@@ -183,6 +180,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,7 +192,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestInsertExtraPackagePath in gopython">
+  <component name="RunManager" selected="Go Test.TestPyRun_SimpleString in gopython">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="gopython" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -284,18 +281,15 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestPyRun_SimpleString in gopython" />
         <item itemvalue="Go Test.TestInsertExtraPackagePath in gopython" />
         <item itemvalue="Go Test.TestAll in gopython" />
-        <item itemvalue="Go Test.TestPyRun_SimpleString in gopython" />
         <item itemvalue="Go Test.BenchmarkInitialize in gopython" />
         <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAll_in_gopython - 2018.10.15 at 18h 31m 04s.xml">
-      <configuration name="TestAll in gopython" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestInsertExtraPackagePath_in_gopython - 2018.10.15 at 18h 32m 08s.xml">
       <configuration name="TestInsertExtraPackagePath in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -323,6 +317,9 @@
     <history-entry file="TestInsertExtraPackagePath_in_gopython - 2018.10.15 at 18h 38m 33s.xml">
       <configuration name="TestInsertExtraPackagePath in gopython" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestPyRun_SimpleString_in_gopython - 2018.10.16 at 11h 43m 27s.xml">
+      <configuration name="TestPyRun_SimpleString in gopython" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,13 +334,13 @@
     <frame x="67" y="25" width="1849" height="902" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25513035" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2579035" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4997227" weight="0.50259066" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49916804" visible="true" weight="0.39896372" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997227" visible="true" weight="0.50259066" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49916804" weight="0.39896372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901555" />
@@ -375,14 +372,7 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parse.go</url>
           <line>27</line>
-          <properties />
           <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/highlevel.go</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -433,37 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/go-1.10/src/testing/testing.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="998">
-          <caret line="776" selection-start-line="776" selection-end-line="776" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#73#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/go-1.10/src/runtime/cgocall.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="127" column="10" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go-python.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/object.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -480,22 +439,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parse.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="418">
           <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/all_test.go">
+    <entry file="file:///usr/lib/go-1.10/src/runtime/cgocall.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="2337">
+          <caret line="127" column="10" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go-python.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/highlevel.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="73" selection-end-column="1" />
+        <state relative-caret-position="19">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="91" column="23" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="23" />
+          <folding>
+            <element signature="e#73#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/go-1.10/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="776" selection-start-line="776" selection-end-line="776" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
         </state>
       </provider>
     </entry>

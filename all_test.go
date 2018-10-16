@@ -6,9 +6,18 @@ import (
 	"testing"
 )
 
-func TestInsertExtraPackagePath(t *testing.T) {
+func TestPyRun_SimpleString(t *testing.T) {
 	Initialize()
-	InsertExtraPackagePath("./")
+
+	interr := PyRun_SimpleString("import os")
+	assert.Equal(t, 0, interr)
+	interr = PyRun_SimpleString("os.makedirs('/tmp/TestPyRun_SimpleString')")
+	assert.Equal(t, 0, interr)
+
+	dir, err := os.Stat("/tmp/TestPyRun_SimpleString") //os.Stat获取文件信息
+	assert.Nil(t, err)
+	assert.True(t, dir.IsDir())
+
 	Finalize()
 }
 

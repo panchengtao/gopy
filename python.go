@@ -51,19 +51,6 @@ func PyImport_ImportModule(name string) *PyObject {
 	return togo(C.PyImport_ImportModule(c_name))
 }
 
-// int PyList_Insert(PyObject *list, Py_ssize_t index, PyObject *item)
-// Insert the item item into list list in front of index index. Return 0 if successful; return -1 and set an exception if unsuccessful. Analogous to list.insert(index, item).
-//
-// Changed in version 2.5: This function used an int for index. This might require changes in your code for properly supporting 64-bit systems.
-func PyList_Insert(self *PyObject, index int, item *PyObject) error {
-	err := C.PyList_Insert(topy(self), C.Py_ssize_t(index), topy(item))
-	if err == 0 {
-		return nil
-	}
-
-	return errors.New(fmt.Sprintf("error in C-Python (rc=%d)", int(err)))
-}
-
 // PyObject* PyTuple_New(Py_ssize_t len)
 // Return value: New reference.
 // Return a new tuple object of size len, or NULL on failure.

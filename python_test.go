@@ -6,15 +6,27 @@ import (
 	"testing"
 )
 
-func TestCallFunc(t *testing.T) {
-	Initialize()
-	os.Remove("/tmp/TestCallFunc")
-	_, err := CallFunc("os", "makedirs", "/tmp/TestCallFunc")
+func TestPyImport_ImportModule(t *testing.T) {
+	testFile, err := os.OpenFile("./test_import.py", os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0666)
 	assert.Nil(t, err)
+	testFile.Write([]byte("def minus(x,y):\n"))
+	testFile.Write([]byte("	   return x - y\n"))
+	testFile.Write([]byte("def add(x,y):\n"))
+	testFile.Write([]byte("    return x + y\n"))
+	testFile.Write([]byte("def return_self(self):\n"))
+	testFile.Write([]byte("    return self\n"))
+	testFile.Write([]byte("def zero_arg():\n"))
+	testFile.Write([]byte("    return 0\n"))
+	testFile.Close()
 
-	dir, err := os.Stat("/tmp/TestCallFunc") //os.Stat获取文件信息
+	Initialize()
+	PyRun_SimpleString("import sys")
+	PyRun_SimpleString("sys.path.append('/home/panchengtao/go/src/gopython')")
+
+	ret, err := CallFunc("test_import", "add", 1, 1)
+	callInt := GoInt(ret)
+	assert.True(t, callInt == 2)
 	assert.Nil(t, err)
-	assert.True(t, dir.IsDir())
 
 	Finalize()
 }

@@ -6,29 +6,11 @@ import "C"
 
 import (
 	"errors"
-	"strings"
 )
 
 var PyStr = PyString_FromString
 var GoStr = PyString_AsString
 var GoInt = PyInt_AsLong
-
-// InsertExtraPackagePath 添加额外的包引用路径
-func InsertExtraPackagePath(dir string) (*PyObject, error) {
-	sysModule := PyImport_ImportModule("sys")
-	path := sysModule.GetAttrString("path")
-	if path != nil {
-		if str := GoStr(path.Repr()); !strings.Contains(str, dir) {
-			if err := PyList_Insert(path, 0, PyStr(dir)); err != nil {
-				return nil, err
-			}
-		}
-
-		return path, nil
-	}
-
-	return nil, errors.New("未导入指定模块路径")
-}
 
 // CallFunc 调用 Python 中的方法
 // 指定模块名称，方法名称，排列参数

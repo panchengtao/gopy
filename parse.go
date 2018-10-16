@@ -9,10 +9,6 @@ import (
 	"unsafe"
 )
 
-// func (self *PyString) Check() int {
-// 	return int(C.PyString_Check(self.topy()))
-// }
-
 // PyObject* PyString_FromString(const char *v)
 // Return value: New reference.
 // Return a new string object with a copy of the string v as value on success, and NULL on failure. The parameter v must not be NULL; it will not be checked.

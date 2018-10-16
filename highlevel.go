@@ -6,11 +6,24 @@ import "C"
 
 import (
 	"errors"
+	"fmt"
 )
 
 var PyStr = PyString_FromString
 var GoStr = PyString_AsString
 var GoInt = PyInt_AsLong
+
+func InsertPackagePath(path string) error {
+	interr := PyRun_SimpleString("import sys")
+	if interr == 0 {
+		interr = PyRun_SimpleString(fmt.Sprintf("sys.path.append('%s')", path))
+		if interr == 0 {
+			return nil
+		}
+	}
+
+	return errors.New("未成功执行 PyRun_SimpleString 命令用于导入包路径")
+}
 
 // CallFunc 调用 Python 中的方法
 // 指定模块名称，方法名称，排列参数

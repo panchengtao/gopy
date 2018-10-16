@@ -6,31 +6,6 @@ import (
 	"testing"
 )
 
-func TestPyImport_ImportModule(t *testing.T) {
-	testFile, err := os.OpenFile("./test_import.py", os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0666)
-	assert.Nil(t, err)
-	testFile.Write([]byte("def minus(x,y):\n"))
-	testFile.Write([]byte("	   return x - y\n"))
-	testFile.Write([]byte("def add(x,y):\n"))
-	testFile.Write([]byte("    return x + y\n"))
-	testFile.Write([]byte("def return_self(self):\n"))
-	testFile.Write([]byte("    return self\n"))
-	testFile.Write([]byte("def zero_arg():\n"))
-	testFile.Write([]byte("    return 0\n"))
-	testFile.Close()
-
-	Initialize()
-	PyRun_SimpleString("import sys")
-	PyRun_SimpleString("sys.path.append('/home/panchengtao/go/src/gopython')")
-
-	ret, err := CallFunc("test_import", "add", 1, 1)
-	callInt := GoInt(ret)
-	assert.True(t, callInt == 2)
-	assert.Nil(t, err)
-
-	Finalize()
-}
-
 func TestPyRun_SimpleString(t *testing.T) {
 	Initialize()
 	os.Remove("/tmp/TestPyRun_SimpleString")
@@ -47,7 +22,6 @@ func TestPyRun_SimpleString(t *testing.T) {
 	Finalize()
 }
 
-// TODO:目前无法动态注入包搜索路径
 func TestAll(t *testing.T) {
 	testFile, err := os.OpenFile("./hello.py", os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0666)
 	assert.Nil(t, err)
@@ -63,6 +37,8 @@ func TestAll(t *testing.T) {
 
 	err = Initialize()
 	assert.Nil(t, err)
+
+	InsertPackagePath("./")
 
 	ret, err := CallFunc("hello", "minus", 1, 1)
 	callInt := GoInt(ret)

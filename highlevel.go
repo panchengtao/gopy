@@ -51,16 +51,18 @@ func CallFunc(modulename string, funcname string, args ...interface{}) (*PyObjec
 				res := attr.CallFunction(funcArgs)
 				return res, nil
 			}
+		} else {
+			var attr = module.GetAttrString(funcname)
+			if attr != nil {
+				res := module.GetAttrString(funcname).CallFunction()
+				return res, nil
+			}
 		}
 
-		var attr = module.GetAttrString(funcname)
-		if attr != nil {
-			res := module.GetAttrString(funcname).CallFunction()
-			return res, nil
-		}
+		return nil, errors.New("未成功获取模块内的 Func 实例")
 	}
 
-	return nil, errors.New("未成功获取模块内的 Func 实例")
+	return nil, errors.New("未成功获取模块内的 Module 实例")
 }
 
 // getModule 获得导入模块的引用

@@ -6,8 +6,22 @@ import (
 	"testing"
 )
 
+func TestCallFunc(t *testing.T) {
+	Initialize()
+	os.Remove("/tmp/TestCallFunc")
+	_, err := CallFunc("os", "makedirs", "/tmp/TestCallFunc")
+	assert.Nil(t, err)
+
+	dir, err := os.Stat("/tmp/TestCallFunc") //os.Stat获取文件信息
+	assert.Nil(t, err)
+	assert.True(t, dir.IsDir())
+
+	Finalize()
+}
+
 func TestPyRun_SimpleString(t *testing.T) {
 	Initialize()
+	os.Remove("/tmp/TestPyRun_SimpleString")
 
 	interr := PyRun_SimpleString("import os")
 	assert.Equal(t, 0, interr)
@@ -37,9 +51,6 @@ func TestAll(t *testing.T) {
 
 	err = Initialize()
 	assert.Nil(t, err)
-
-	//_, err = InsertExtraPackagePath("/home/panchengtao/go/src/pythoninvoker/python3.6")
-	//assert.Nil(t, err)
 
 	ret, err := CallFunc("hello", "minus", 1, 1)
 	callInt := GoInt(ret)

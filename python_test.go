@@ -102,8 +102,6 @@ func TestCompleteWorkFlowWithSubInterpreter(t *testing.T) {
 	assert.Nil(t, err)
 
 	Py_EndInterpreter(subret)
-	// Do not neccessary to invoke Finalize()
-	//Finalize()
 
 	defer os.Remove("./hello.py")
 	defer os.Remove("./hello.pyc")

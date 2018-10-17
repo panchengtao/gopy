@@ -5,7 +5,6 @@ package gopython
 import "C"
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -22,7 +21,7 @@ func InsertPackagePath(path string) error {
 		}
 	}
 
-	return errors.New("未成功执行 PyRun_SimpleString 命令用于导入包路径")
+	return fmt.Errorf("python: could not invoke PyRun_SimpleString to append extra path %s", path)
 }
 
 // CallFunc 调用 Python 中的方法
@@ -54,18 +53,16 @@ func CallFunc(modulename string, funcname string, args ...interface{}) (*PyObjec
 			}
 		}
 
-		return nil, errors.New("未成功获取模块内的 Func 实例")
+		return nil, fmt.Errorf("python: could not get func named %s after importing module named %s", funcname, modulename)
 	}
 
-	return nil, errors.New("未成功获取模块内的 Module 实例")
+	return nil, err
 }
 
-// getModule 获得导入模块的引用
-// TODO:使用其他诸如缓存方法获取模块，取代重新导入
 func getModule(modulename string) (*PyObject, error) {
 	if obj := PyImport_ImportModule(modulename); obj != nil {
 		return obj, nil
 	}
 
-	return nil, errors.New("未导入指定模块")
+	return nil, fmt.Errorf("python: could not import The specified module named %s", modulename)
 }

@@ -13,7 +13,12 @@ import (
 // The Python None object, denoting lack of value. This object has no methods.
 // It needs to be treated just like any other object with respect to reference
 // counts.
-var Py_None = togo(C.Py_None)
+var Py_None = toGoPyObject(C.Py_None)
+
+// PyThreadState layer
+type PyThreadState struct {
+	ptr *C.PyThreadState
+}
 
 // PyObject layer
 type PyObject struct {
@@ -26,21 +31,21 @@ type PyObject struct {
 func (self *PyObject) GetAttrString(attr_name string) *PyObject {
 	c_attr_name := C.CString(attr_name)
 	defer C.free(unsafe.Pointer(c_attr_name))
-	return togo(C.PyObject_GetAttrString(self.ptr, c_attr_name))
+	return toGoPyObject(C.PyObject_GetAttrString(self.ptr, c_attr_name))
 }
 
 // PyObject* PyObject_Repr(PyObject *o)
 // Return value: New reference.
 // Compute a string representation of object o. Returns the string representation on success, NULL on failure. This is the equivalent of the Python expression repr(o). Called by the repr() built-in function and by reverse quotes.
 func (self *PyObject) Repr() *PyObject {
-	return togo(C.PyObject_Str(self.ptr))
+	return toGoPyObject(C.PyObject_Str(self.ptr))
 }
 
 // PyObject* PyObject_Call(PyObject *callable_object, PyObject *args, PyObject *kw)
 // Return value: New reference.
 // Call a callable Python object callable_object, with arguments given by the tuple args, and named arguments given by the dictionary kw. If no named arguments are needed, kw may be NULL. args must not be NULL, use an empty tuple if no arguments are needed. Returns the result of the call on success, or NULL on failure. This is the equivalent of the Python expression apply(callable_object, args, kw) or callable_object(*args, **kw).
 func (self *PyObject) Call(args, kw *PyObject) *PyObject {
-	return togo(C.PyObject_Call(self.ptr, args.ptr, kw.ptr))
+	return toGoPyObject(C.PyObject_Call(self.ptr, args.ptr, kw.ptr))
 }
 
 // PyObject* PyObject_CallFunction(PyObject *callable, char *format, ...)
@@ -71,7 +76,7 @@ func (self *PyObject) CallFunction(args ...interface{}) *PyObject {
 
 	if len(args) <= 0 {
 		o := C._gopy_PyObject_CallFunction(self.ptr, 0, nil, nil)
-		return togo(o)
+		return toGoPyObject(o)
 	}
 
 	pyfmt := C.CString(strings.Join(types, ""))
@@ -83,24 +88,10 @@ func (self *PyObject) CallFunction(args ...interface{}) *PyObject {
 		unsafe.Pointer(&cargs[0]),
 	)
 
-	return togo(o)
+	return toGoPyObject(o)
 
 }
 
 func (self *PyObject) topy() *C.PyObject {
 	return self.ptr
-}
-
-func topy(self *PyObject) *C.PyObject {
-	if self == nil {
-		return nil
-	}
-	return self.ptr
-}
-
-func togo(obj *C.PyObject) *PyObject {
-	if obj == nil {
-		return nil
-	}
-	return &PyObject{ptr: obj}
 }

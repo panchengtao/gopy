@@ -15,7 +15,7 @@ import (
 func PyString_FromString(v string) *PyObject {
 	cstr := C.CString(v)
 	defer C.free(unsafe.Pointer(cstr))
-	return togo(C.PyBytes_FromString(cstr))
+	return toGoPyObject(C.PyBytes_FromString(cstr))
 }
 
 // char* PyString_AsString(PyObject *string)
@@ -30,7 +30,7 @@ func PyString_AsString(self *PyObject) string {
 // long PyInt_AsLong(PyObject *io)
 // Will first attempt to cast the object to a PyIntObject, if it is not already one, and then return its value. If there is an error, -1 is returned, and the caller should check PyErr_Occurred() to find out whether there was an error, or whether the value just happened to be -1.
 func PyInt_AsLong(self *PyObject) int {
-	return int(C.PyLong_AsLong(topy(self)))
+	return int(C.PyLong_AsLong(toPyPyObject(self)))
 }
 
 // PyObject* PyInt_FromLong(long ival)
@@ -39,7 +39,7 @@ func PyInt_AsLong(self *PyObject) int {
 //
 // The current implementation keeps an array of integer objects for all integers between -5 and 256, when you create an int in that range you actually just get back a reference to the existing object. So it should be possible to change the value of 1. I suspect the behaviour of Python in this case is undefined. :-)
 func PyInt_FromLong(val int) *PyObject {
-	return togo(C.PyLong_FromLong(C.long(val)))
+	return toGoPyObject(C.PyLong_FromLong(C.long(val)))
 }
 
 // pyfmt returns the python format string for a given go value

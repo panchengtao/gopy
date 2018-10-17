@@ -10,6 +10,23 @@ import (
 	"unsafe"
 )
 
+// Create a new sub-interpreter.
+// This is an (almost) totally separate environment for the execution of Python code.
+func Py_NewInterpreter() (*PyThreadState, error) {
+	var pyThreadStatePtr = C.Py_NewInterpreter()
+	if pyThreadStatePtr == nil {
+		return nil, fmt.Errorf("python: could not create the sub python interpreter")
+	} else {
+		return toGoPyThreadState(pyThreadStatePtr), nil
+	}
+}
+
+// Destroy the (sub-)interpreter represented by the given thread state.
+func Py_EndInterpreter(state *PyThreadState) error {
+	C.Py_EndInterpreter(state.ptr)
+	return nil
+}
+
 // Initialize initializes the python interpreter and its GIL
 func Initialize() error {
 	// make sure the python interpreter has been initialized
@@ -48,7 +65,7 @@ func PyImport_ImportModule(name string) *PyObject {
 	c_name := C.CString(name)
 	defer C.free(unsafe.Pointer(c_name))
 
-	return togo(C.PyImport_ImportModule(c_name))
+	return toGoPyObject(C.PyImport_ImportModule(c_name))
 }
 
 // PyObject* PyTuple_New(Py_ssize_t len)
@@ -57,7 +74,7 @@ func PyImport_ImportModule(name string) *PyObject {
 //
 // Changed in version 2.5: This function used an int type for len. This might require changes in your code for properly supporting 64-bit systems.
 func PyTuple_New(sz int) *PyObject {
-	return togo(C.PyTuple_New(C.Py_ssize_t(sz)))
+	return toGoPyObject(C.PyTuple_New(C.Py_ssize_t(sz)))
 }
 
 // int PyTuple_SetItem(PyObject *p, Py_ssize_t pos, PyObject *o)
@@ -66,7 +83,7 @@ func PyTuple_New(sz int) *PyObject {
 // Note This function “steals” a reference to o.
 // Changed in version 2.5: This function used an int type for pos. This might require changes in your code for properly supporting 64-bit systems.
 func PyTuple_SetItem(self *PyObject, pos int, o *PyObject) error {
-	err := C.PyTuple_SetItem(topy(self), C.Py_ssize_t(pos), topy(o))
+	err := C.PyTuple_SetItem(toPyPyObject(self), C.Py_ssize_t(pos), toPyPyObject(o))
 	if err == 0 {
 		return nil
 	}
@@ -80,4 +97,32 @@ func PyRun_SimpleString(command string) int {
 	c_cmd := C.CString(command)
 	defer C.free(unsafe.Pointer(c_cmd))
 	return int(C._gopy_PyRun_SimpleString(c_cmd))
+}
+
+func toGoPyThreadState(state *C.PyThreadState) *PyThreadState {
+	if state == nil {
+		return nil
+	}
+	return &PyThreadState{ptr: state}
+}
+
+func toPyPyThreadState(state *PyThreadState) *C.PyThreadState {
+	if state == nil {
+		return nil
+	}
+	return state.ptr
+}
+
+func toPyPyObject(obj *PyObject) *C.PyObject {
+	if obj == nil {
+		return nil
+	}
+	return obj.ptr
+}
+
+func toGoPyObject(obj *C.PyObject) *PyObject {
+	if obj == nil {
+		return nil
+	}
+	return &PyObject{ptr: obj}
 }

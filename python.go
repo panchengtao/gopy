@@ -30,7 +30,7 @@ func Py_EndInterpreter(state *PyThreadState) error {
 // Swap the current thread state with the thread state given by the argument tstate, which may be NULL.
 // TODO: The global interpreter lock must be held and is not released.
 func PyThreadState_Swap(tstate *PyThreadState) (*PyThreadState, error) {
-	var pyThreadStatePtr = PyThreadState_Swap
+	var pyThreadStatePtr = C.PyThreadState_Swap(tstate.ptr)
 	if pyThreadStatePtr == nil {
 		return nil, fmt.Errorf("python: could not swap the current thread state with the thread state given by the specific tstate")
 	} else {

@@ -29,6 +29,7 @@ notifications:
 # build and immediately stop. It's sorta like having set -e enabled in bash.
 # Make sure golangci-lint is vendored.
 before_script:
+  - sudo apt update
   - sudo apt install python3.6-dev
   - sudo apt install pkg-config
 #  - go install -mod vendor github.com/golangci/golangci-lint
@@ -37,5 +38,5 @@ before_script:
 # failing test, we want to see both. Configure golangci-lint with a
 # .golangci.yml file at the top level of your repo.
 script:
-  - go vet -composites=false $(go list ./... | grep -v /vendor/)       # run a bunch of code checkers/linters in parallel
-  - go test -v -race ./...  # Run all the tests with the race detector enabled
+  - go vet -composites=false -mod=vendor ./...  # run a bunch of code checkers/linters in parallel
+  - go test -v -race -mod=vendor ./...  # Run all the tests with the race detector enabled

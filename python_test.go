@@ -106,19 +106,3 @@ func TestCompleteWorkFlowWithSubInterpreter(t *testing.T) {
 	defer os.Remove("./hello.py")
 	defer os.Remove("./hello.pyc")
 }
-
-func TestPyRun_SimpleString(t *testing.T) {
-	Initialize()
-	os.Remove("/tmp/TestPyRun_SimpleString")
-
-	interr := PyRun_SimpleString("import os")
-	assert.Equal(t, 0, interr)
-	interr = PyRun_SimpleString("os.makedirs('/tmp/TestPyRun_SimpleString')")
-	assert.Equal(t, 0, interr)
-
-	dir, err := os.Stat("/tmp/TestPyRun_SimpleString") //os.Stat获取文件信息
-	assert.Nil(t, err)
-	assert.True(t, dir.IsDir())
-
-	Finalize()
-}

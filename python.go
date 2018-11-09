@@ -27,6 +27,17 @@ func Py_EndInterpreter(state *PyThreadState) error {
 	return nil
 }
 
+// Swap the current thread state with the thread state given by the argument tstate, which may be NULL.
+// TODO: The global interpreter lock must be held and is not released.
+func PyThreadState_Swap(tstate *PyThreadState) (*PyThreadState, error) {
+	var pyThreadStatePtr = C.PyThreadState_Swap(tstate.ptr)
+	if pyThreadStatePtr == nil {
+		return nil, fmt.Errorf("python: could not swap the current thread state with the thread state given by the specific tstate")
+	} else {
+		return toGoPyThreadState(pyThreadStatePtr), nil
+	}
+}
+
 // Initialize initializes the python interpreter and its GIL
 func Initialize() error {
 	// make sure the python interpreter has been initialized
